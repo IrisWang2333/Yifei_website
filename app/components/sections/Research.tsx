@@ -77,7 +77,7 @@ const publications: Publication[] = [
     description: "We propose a maverick stock trading strategy and apply it to the Chinese stock market",
     overview: "In this paper, we propose a maverick stock trading strategy and apply it to the Chinese stock market. We use a high-frequency trade data of Chinese stock market in 2019 and apply the trading strategy every day. Data comes from the CSMAR database. Our trading strategy shows an amazingly high return. We further find that the strategy behaves better when trade in all the markets together. When trading in different markets respectively, the return is still much higher than the market index’s return, where the highest return appears in the GEM market. This paper provides a new perspective of stock trading.",
     publishDate: "Dec 2022",
-    chartImage: "/research/Stock.png",
+    chartImage: "/research/Stock1.png",
   },
   {
     id: 5,
