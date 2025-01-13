@@ -26,28 +26,28 @@ const photos: Photo[] = [
   },
   {
     id: 2,
-    image: "/gallery/John.jpg",
+    image: "/gallery/John.JPG",
     date: "2024.12", 
     location: "with John Friedman (center) and Mengying Peng (left).",
     description: "John Friedman is an economist and professor at Brown University, known for his research on social mobility, education, and public policy. Mengying is an educational economist at Hitotsubashi University"
   },
   {
     id: 3,
-    image: "/gallery/Jacob.jpg",
+    image: "/gallery/Jacob.JPG",
     date: "2024.12", 
     location: "with Jacob L. Vigdor",
     description: "Jacob L. Vigdor is an economist and professor at the University of Washington, known for his research on immigration, education policy, and housing economics."
   },
   {
     id: 4,
-    image: "/gallery/Annemarie.jpg",
+    image: "/gallery/Annemarie.JPEG",
     date: "2024.12", 
     location: "with Annemarie Schweinert",
     description: "Annemarie Schweinert is a Ph.D. student at the University of Wisconsin-Madison, focusing on topics related to economics and public policy."
   },
   {
     id: 5,
-    image: "/gallery/Jane.jpg",
+    image: "/gallery/Jane.JPG",
     date: "2024.12", 
     location: "with Xuechao(Jane) Qian",
     description: "Jane is a Postdoctoral Scholar at UC Irvine and a former Lazear-Liang Postdoctoral Scholar at Stanford GSB (2022-2024), specializing in labor and health economics with a focus on diversity, innovation, and human capital formation."
