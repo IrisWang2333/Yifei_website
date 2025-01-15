@@ -97,7 +97,7 @@ export default function FloatingElements() {
 
   return (
     <motion.div 
-      className="fixed inset-0 z--1 overflow-hidden pointer-events-none"
+      className="fixed inset-0 -z-10 overflow-hidden pointer-events-none"
       style={{ opacity }}
       initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
       animate={{ 
