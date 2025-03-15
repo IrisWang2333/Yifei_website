@@ -82,7 +82,7 @@ const publications: Publication[] = [
   {
     id: 5,
     title: "The Impact of School Attendance Boundary Rezoning on Housing Prices and Students' Academic Performance",
-    authors: "YiFei Wang, [Co-author's Name]",
+    authors: "YiFei Wang, David Schönholzer",
     type: "working",
     description: "",
     overview: "This paper investigates the effects of school attendance boundary (SAB) rezoning on housing prices and Students' Academic Performance. Using geospatial data and machine learning techniques, we adjust and classify boundary changes to identify patterns in housing market responses and demographic shifts. By applying causal inference frameworks, the study evaluates whether SAB adjustments lead to increased economic and racial integration or exacerbate segregation. Preliminary findings suggest that rezoning significantly influences housing prices and community composition, providing critical insights for policymakers to design equitable and effective boundary policies. The research contributes to understanding the interplay between education policies and broader social dynamics.",
@@ -96,16 +96,30 @@ const publications: Publication[] = [
   },
   {
     id: 6,
-    title: "Evaluating the Impact of Comprehensive Support and Improvement (CSI) Policies on Students' Academic Performance",
-    authors: "YiFei Wang, [Co-author's Name]",
+    title: "The Impact of the UK Postcode Lottery on Housing Prices",
+    authors: "YiFei Wang, Jeremy West",
     type: "working",
     description: "",
-    overview: "This paper examines the effectiveness of Comprehensive Support and Improvement (CSI) policies in addressing disparities in underperforming schools. Using detailed school-level data and machine learning techniques, we analyze the allocation of resources and track improvements in student outcomes post-CSI implementation. By applying causal inference frameworks, the study evaluates whether CSI interventions reduce achievement gaps and improve equity in resource distribution. Early findings suggest that while CSI policies can significantly enhance student performance in targeted schools, the effectiveness varies based on initial school conditions and the degree of intervention. This research provides actionable insights for optimizing support programs and achieving educational equity.",
+    overview: "The UK Postcode Lottery, a national subscription-based lottery, allocates winnings based on postal codes, leading to unexpected wealth shocks for residents. This study examines its causal impact on housing prices, exploring whether sudden cash inflows affect local property values, housing demand, and neighborhood dynamics. Using a Difference-in-Differences (DID) approach, this research compares housing price trends in areas where residents win large versus small prizes before and after lottery payouts. By leveraging property transaction data and controlling for regional economic factors, the study aims to provide empirical insights into how localized wealth shocks influence the housing market.",
     publishDate: "",
     bulletPoints: [
-      "Comprehensive Support and Improvement (CSI) policies target underperforming schools identified under the Every Student Succeeds Act (ESSA).",
-      "The research evaluates CSI's effectiveness in reducing achievement gaps and improving resource equity using school-level data and advanced econometric methods.",
-      "This study aims to provide actionable insights for policymakers to optimize intervention strategies, ensuring long-term educational improvements and equity."
+      "The UK Postcode Lottery creates localized wealth shocks by awarding cash prizes based on postal codes, potentially influencing housing market dynamics.",
+      "This study uses a Difference-in-Differences (DID) approach to compare housing price trends in areas where residents win large versus small prizes.",
+      "By analyzing property transaction data and controlling for regional economic factors, the research aims to identify the causal impact of sudden wealth inflows on housing prices and demand."
+    ]
+  },
+  {
+    id: 7,
+    title: "Impact of Education Savings Accounts (ESA) on Students' Academic Performance and School Choice",
+    authors: "YiFei Wang",
+    type: "working",
+    description: "",
+    overview: "This study examines the impact of Education Savings Accounts (ESAs) on K-12 education, focusing on their effects on student achievement and school choice. ESAs are publicly funded, government-authorized savings accounts that parents can use for various educational expenses, including tuition, tutoring, online education programs, special education therapies, textbooks, and, in some cases, college savings. Currently, there are 19 ESA programs across 17 states in the U.S., with variations in eligibility criteria and implementation.",
+    publishDate: "",
+    bulletPoints: [
+      "Education Savings Accounts (ESAs) provide publicly funded, flexible spending options for K-12 education, allowing families to cover tuition, tutoring, online programs, and other educational expenses.",
+      "This research examines the impact of ESAs on student achievement and school choice, focusing on policy differences across states such as Arizona, North Carolina, Florida, Utah, and Tennessee.",
+      "Using a Difference-in-Differences (DID) approach with matching techniques, the study aims to provide empirical insights for policymakers to assess ESA effectiveness and optimize program design."
     ]
   },
 ]
