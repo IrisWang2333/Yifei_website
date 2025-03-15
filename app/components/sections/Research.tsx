@@ -75,7 +75,7 @@ const publications: Publication[] = [
     pdf: "/research/Application of a Maverick Stock Capturing Strategy in the Chinese Stock Market.pdf",
     ssrn: "https://www.atlantis-press.com/proceedings/msea-22/125982751",
     description: "We propose a maverick stock trading strategy and apply it to the Chinese stock market",
-    overview: "In this paper, we propose a maverick stock trading strategy and apply it to the Chinese stock market. We use a high-frequency trade data of Chinese stock market in 2019 and apply the trading strategy every day. Data comes from the CSMAR database. Our trading strategy shows an amazingly high return. We further find that the strategy behaves better when trade in all the markets together. When trading in different markets respectively, the return is still much higher than the market index’s return, where the highest return appears in the GEM market. This paper provides a new perspective of stock trading.",
+    overview: "In this paper, we propose a maverick stock trading strategy and apply it to the Chinese stock market. We use a high-frequency trade data of Chinese stock market in 2019 and apply the trading strategy every day. Data comes from the CSMAR database. Our trading strategy shows an amazingly high return. We further find that the strategy behaves better when trade in all the markets together. When trading in different markets respectively, the return is still much higher than the market index's return, where the highest return appears in the GEM market. This paper provides a new perspective of stock trading.",
     publishDate: "Dec 2022",
     chartImage: "/research/Stock1.png",
   },
@@ -124,6 +124,20 @@ const publications: Publication[] = [
   },
 ]
 
+const renderAuthorsWithLinks = (authors: string) => {
+  const authorWithLinks = authors
+    .replace(
+      'David Schönholzer', 
+      '<a href="https://www.davidschonholzer.com" class="text-purple-500 hover:text-purple-600 dark:text-purple-400 dark:hover:text-purple-300" target="_blank" rel="noopener noreferrer">David Schönholzer</a>'
+    )
+    .replace(
+      'Jeremy West', 
+      '<a href="https://people.ucsc.edu/~jwest1/" class="text-purple-500 hover:text-purple-600 dark:text-purple-400 dark:hover:text-purple-300" target="_blank" rel="noopener noreferrer">Jeremy West</a>'
+    );
+  
+  return <span dangerouslySetInnerHTML={{ __html: authorWithLinks }} />;
+};
+
 export default function Research() {
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedPaper, setSelectedPaper] = useState<Publication | null>(null)
@@ -161,56 +175,79 @@ export default function Research() {
                 .map((paper) => (
                   <AnimatedText key={paper.id}>
                     <div className="
-                      flex flex-col sm:flex-row sm:items-center sm:justify-between
-                      pb-6 border-b border-black/10 dark:border-white/10
+                      group
+                      flex flex-col sm:flex-row sm:items-start sm:justify-between
+                      pb-8 border-b border-black/10 dark:border-white/10
+                      transition-all duration-300
+                      -mx-4 px-4 py-2 rounded-lg
                     ">
-                      <div className="space-y-2 sm:space-y-0">
-                        <div className="flex flex-wrap items-center gap-2 text-sm sm:text-lg">
-                          <span className="font-medium">{paper.title}</span>
-                          <span className="opacity-70">{paper.year}</span>
+                      <div className="space-y-3">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <h3 className="font-medium text-base sm:text-xl group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                            {paper.title}
+                          </h3>
+                          <span className="opacity-70 text-sm sm:text-base">{paper.year}</span>
+                        </div>
+                        
+                        {paper.authors && (
+                          <p className="opacity-70 text-sm sm:text-base">
+                            {renderAuthorsWithLinks(paper.authors)}
+                          </p>
+                        )}
+
+                        {paper.journal && (
+                          <p className="opacity-80 text-sm sm:text-base italic font-semibold">
+                            {paper.journal}
+                          </p>
+                        )}
+                        
+                        <div className="flex flex-wrap gap-3 text-base">
                           {paper.pdf && (
                             <a 
                               href={paper.pdf}
-                              className="text-purple-500 hover:text-purple-600 dark:text-purple-400 dark:hover:text-purple-300"
+                              className="inline-flex items-center text-purple-500 hover:text-purple-600 dark:text-purple-400 dark:hover:text-purple-300 group-hover:underline"
                               target="_blank"
                               rel="noopener noreferrer"
                               onClick={e => e.stopPropagation()}
                             >
-                              [PDF]
+                              <svg className="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 18H17V16H7V18Z" fill="currentColor" />
+                                <path d="M17 14H7V12H17V14Z" fill="currentColor" />
+                                <path d="M7 10H11V8H7V10Z" fill="currentColor" />
+                                <path fillRule="evenodd" clipRule="evenodd" d="M6 2C4.34315 2 3 3.34315 3 5V19C3 20.6569 4.34315 22 6 22H18C19.6569 22 21 20.6569 21 19V9C21 5.13401 17.866 2 14 2H6ZM6 4H13V9H19V19C19 19.5523 18.5523 20 18 20H6C5.44772 20 5 19.5523 5 19V5C5 4.44772 5.44772 4 6 4ZM15 4.10002C16.6113 4.4271 17.9413 5.52906 18.584 7H15V4.10002Z" fill="currentColor" />
+                              </svg>
+                              PDF
                             </a>
                           )}
                           {paper.ssrn && (
                             <a 
                               href={paper.ssrn}
-                              className="text-purple-500 hover:text-purple-600 dark:text-purple-400 dark:hover:text-purple-300"
+                              className="inline-flex items-center text-purple-500 hover:text-purple-600 dark:text-purple-400 dark:hover:text-purple-300 group-hover:underline"
                               target="_blank"
                               rel="noopener noreferrer"
                               onClick={e => e.stopPropagation()}
                             >
-                              [HTML]
+                              <svg className="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fillRule="evenodd" clipRule="evenodd" d="M14.982 19.61c.454-.7.909-1.6 1.236-2.5h.245c1.09 0 2.18-.218 3.271-.218 1.09 0 2.035.218 2.726.655.69.218.981.873.981 1.528 0 .873-.545 1.746-1.09 2.4-.546.655-1.309.873-2.181.873-1.309 0-2.617-.436-3.707-1.091-1.4-.437-2.29-.983-3.054-1.91-.218.437-.545.655-.981.655-.546 0-1.091-.218-1.637-.218-.545-.219-.981-.437-1.526-.874.981-.872 1.962-1.963 2.617-2.835H7.1c-.545.872-1.09 1.618-1.744 2.4-.764 0-1.527-.219-2.29-.219-1.309-.218-2.617-.436-3.926-.436-.655 1.527-2.29 2.4-3.926 2.4v-1.746c1.09 0 2.18.218 2.726 1.31-1.09 1.09-2.181 2.4-2.726 3.926-.545.219-1.09.437-1.635.437-.546 0-.982-.218-1.527-.218v-1.746c.545 0 1.09 0 1.636.218.545 0 .981.219 1.526.655.545-.655.981-1.528 1.417-2.4-1.09 0-2.18-.219-3.27-.219v-1.745c1.09 0 2.18.218 3.27.218.537 0 1.09-.218 1.627-.436-.545-.874-.981-1.746-1.626-2.619-.982.219-1.963.219-2.945.219V4.764c1.09 0 2.18 0 3.27-.219 1.1-.218 2.182-.218 3.272-.218.536-.873.763-1.964 1.09-2.836h1.963c-.327.872-.654 1.745-1.09 2.4h5.67c-.327-.655-.654-1.527-1.09-2.4h1.964c.436.873.872 1.745 1.09 2.618 1.09 0 2.18.219 3.27.219 1.091 0 2.182 0 3.272-.219v1.746c-.981 0-1.963 0-2.944-.219-.545.873-1.09 1.745-1.527 2.619.545.218 1.09.436 1.635.436s1.09-.218 3.272-.218v1.745c-1.09 0-2.181.219-3.271.219.436.872.981 1.745 1.417 2.4.545-.218.981-.437 1.526-.437.545-.218 1.09-.218 1.636-.218v1.746c-.545 0-.982 0-1.527.218-.545 0-1.09.219-1.526.437-.546 1.309-1.637 2.618-2.726 3.708.545.873 1.635 1.31 2.726 1.31v1.745c-1.636 0-3.27-.873-3.926-2.4-1.309 0-2.617.219-3.926.437-.763 0-1.526.218-2.29.218-.654-.654-1.09-1.527-1.745-2.4H9.39c.764.873 1.636 1.746 2.617 2.837-.545.436-.981.654-1.526.872-.546 0-1.09.22-1.636.22-.545 0-.872-.22-.981-.655-.764.872-1.636 1.527-3.053 1.963-1.09.655-2.4 1.09-3.708 1.09-.873 0-1.636-.218-2.18-.872-.546-.655-1.091-1.528-1.091-2.4 0-.655.327-1.31.981-1.528.8-.437 1.745-.655 2.726-.655 1.09 0 2.181.218 3.27.218h.246c.436.9.872 1.8 1.236 2.5.654-.218 1.526-.436 2.18-.654.328-.655.655-1.092.982-1.746h-3.38c-.546 0-.982-.218-1.4-.218-.418-.219-.672-.655-.672-1.091 0-.655.182-1.31 1.236-1.31h5.343c1.09 0 1.854.219 1.854 1.528 0 .436-.11.872-.328 1.309-.218.655-.545 1.309-.981 1.963.654.218 1.526.437 2.18.655zm-5.778-9.17c-.218-.437-.764-.874-1.309-.874h-2.18v.219c0 .218.436.436.981.436h2.617c-.109.219 0 .219-.109.219zm-.327 3.053c-.218-.437-.654-.655-1.09-.655h-2.617v.219c0 .218.327.218.654.218h3.162c-.109.219 0 .219-.109.219zm8.614 3.491h-7.197c.327.436.436.872.436 1.527 0 .437-.109.655-.218 1.091.981 0 1.962.219 2.944.219.981 0 1.963 0 2.944-.219-.218-.218-.218-.654-.218-1.09 0-.655.109-1.091.436-1.528h.873zm-3.816-3.491c-.109 0-.109 0-.109-.219h3.162c.327 0 .654 0 .654-.218v-.219h-2.616c-.437 0-.764.218-1.091.655zm-.873-1.528c-.109 0-.109 0-.109-.218h2.508c.545 0 .981-.22.981-.437v-.219h-2.18c-.545 0-.982.437-1.2.874zm4.47 1.964H9.608v.654h7.415v-.654h.328zm-.11-2.619h-7.96v.655h7.942v-.655h.018z" fill="currentColor" />
+                              </svg>
+                              HTML
                             </a>
                           )}
                         </div>
 
-                        {paper.journal && (
-                          <p className="opacity-80 text-xs sm:text-base italic">
-                            {paper.journal}
-                          </p>
-                        )}
-
                         {paper.description && (
-                          <p className="opacity-70 text-xs sm:text-base">
+                          <p className="opacity-70 text-sm sm:text-base leading-relaxed mb-2">
                             {paper.description}
                           </p>
                         )}
+                        
                         {paper.bulletPoints && (
-                          <ul className="list-disc list-inside opacity-70 text-xs sm:text-base pl-1 space-y-1">
+                          <ul className="list-disc space-y-2 opacity-70 text-sm sm:text-base pl-5">
                             {paper.bulletPoints.map((point, index) => (
-                              <li key={index}>{point}</li>
+                              <li key={index} className="leading-relaxed">{point}</li>
                             ))}
                           </ul>
                         )}
-
                       </div>
                       
                       <button
@@ -224,12 +261,13 @@ export default function Research() {
                           dark:hover:shadow-[0_4px_12px_rgba(0,0,0,0.3)]
                           h-9 sm:h-10                                   
                           px-4                                   
-                          text-sm
+                          text-sm sm:text-base
                           whitespace-nowrap                    
                           min-w-[120px] sm:min-w-[140px]      
-                          mt-4 sm:mt-0 sm:ml-6                        
+                          mt-4 sm:mt-4 sm:ml-6                        
                           flex-shrink-0
-                          group                               
+                          group
+                          self-start
                         "
                       >
                         <span className="
