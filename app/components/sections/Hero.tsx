@@ -28,7 +28,7 @@ export default function Hero() {
           className="max-w-2xl text-center sm:text-left"
         >
           <p className="text-foreground/80 leading-relaxed">
-            University of California, Santa Cruz |  2nd year Ph.D. Student
+            University of Southern California |  3rd year Ph.D. Student
           </p>
         </AnimatedText>
 

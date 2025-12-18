@@ -15,8 +15,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Yifei Wang - PhD Student in Economics | UCSC | Applied Micro & Education Policy",
-  description: "Welcome to the official website of Yifei Wang, PhD student in Economics at UC Santa Cruz. Research interests include education policy, applied microeconomics, and public policy.",
+  title: "Yifei Wang - PhD Student in Economics | USC | Applied Micro & Education Policy",
+  description: "Welcome to the official website of Yifei Wang, PhD student in Economics at University of Southern California. Research interests include education policy, applied microeconomics, and public policy.",
 };
 
 export default function RootLayout({

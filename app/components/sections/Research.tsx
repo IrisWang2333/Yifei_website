@@ -192,8 +192,14 @@ export default function Research() {
                           )}
                         </div>
 
+                        {paper.authors && (
+                          <p className="opacity-80 text-xs sm:text-base">
+                            {paper.authors}
+                          </p>
+                        )}
+
                         {paper.journal && (
-                          <p className="opacity-80 text-xs sm:text-base italic">
+                          <p className="opacity-80 text-xs sm:text-base italic text-bold">
                             {paper.journal}
                           </p>
                         )}
