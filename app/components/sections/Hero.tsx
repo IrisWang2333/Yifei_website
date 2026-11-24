@@ -20,7 +20,7 @@ export default function Hero() {
           />
           <h1 className="text-4xl font-bold">Yifei Wang</h1>
           <p className="text-lg text-foreground/80 font-[family-name:var(--font-geist-mono)]">
-          Economist
+          Economics PhD Student
           </p>
         </AnimatedText>
 
@@ -28,12 +28,16 @@ export default function Hero() {
           className="max-w-2xl text-center sm:text-left"
         >
           <p className="text-foreground/80 leading-relaxed">
-            University of Southern California |  3rd year Ph.D. Student
+            University of Southern California | Fourth-year PhD student
           </p>
+          <p className="mt-2 text-foreground/80 leading-relaxed">
+            Applied Microeconomics · Causal Inference · Structural Modeling
+          </p>
+          <p className="mt-2 text-sm text-foreground/70">Expected graduation: May 2030</p>
         </AnimatedText>
 
         <AnimatedText 
-          className="flex gap-4 items-center flex-row"
+          className="flex flex-wrap gap-4 items-center justify-center sm:justify-start"
         >
           <a
             className="
@@ -44,7 +48,7 @@ export default function Hero() {
               px-5                                   
               text-base                              
             "
-            href="https://scholar.google.com/citations?user=Lk2Db9QAAAAJ&hl=zh-CN"
+            href="https://scholar.google.com/citations?user=Lk2Db9QAAAAJ&hl=en"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -82,7 +86,7 @@ export default function Hero() {
       >
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="mailto:ywan1226@ucsc.edu"
+          href="mailto:ywang809@usc.edu"
         >
           <Image
             aria-hidden
@@ -92,7 +96,7 @@ export default function Hero() {
             width={16}
             height={16}
           />
-          Email
+          ywang809@usc.edu
         </a>
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
@@ -113,4 +117,4 @@ export default function Hero() {
       </AnimatedText>
     </section>
   )
-} 
+}

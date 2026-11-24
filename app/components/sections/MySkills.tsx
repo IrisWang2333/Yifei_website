@@ -4,23 +4,23 @@ import React from 'react'
 import Image from "next/image"
 import AnimatedText from "../common/AnimatedText"
 
-const technologies = {
+type Technology = { name: string; icon?: string }
+
+const technologies: { Tools: Technology[] } = {
   // 需要用户自己添加技能，图标需要自己添加到public/skills目录下，格式为：{ name: '技能名称', icon: '/skills/技能图标.svg' }
-  Data: [
-    { name: 'Stata', icon: '/skills/stata.svg' }, 
-    { name: 'SAS', icon: '/skills/sas.svg' }, 
-    { name: 'Matlab', icon: '/skills/matlab.svg' }, 
-    { name: 'QGIS', icon: '/skills/qgis.svg' }, 
-    { name: 'R', icon: '/skills/r.svg' }, 
-  ],
-  Language: [
-    { name: 'Python', icon: '/skills/python.svg' }, // 请替换为你的技能和对应图标
+  Tools: [
+    { name: 'Python', icon: '/skills/python.svg' },
+    { name: 'R', icon: '/skills/r.svg' },
+    { name: 'Stata', icon: '/skills/stata.svg' },
+    { name: 'QGIS', icon: '/skills/qgis.svg' },
+    { name: 'MATLAB', icon: '/skills/matlab.svg' },
+    { name: 'SQL fundamentals' },
+    { name: 'SAS', icon: '/skills/sas.svg' },
   ]
 }
 
 const categories = {
-  Data: 'Data Science', // 可以根据需要修改分类名称
-  Language: 'Programming Language',
+  Tools: 'Programming and Data Tools',
 }
 
 export default function MySkills() {
@@ -77,7 +77,7 @@ export default function MySkills() {
                         group-hover:scale-110   
                         group-hover:-translate-y-1
                       ">
-                        <Image
+                        {tech.icon ? <Image
                           src={tech.icon}
                           alt={tech.name}
                           width={48}
@@ -86,10 +86,10 @@ export default function MySkills() {
                             dark:invert          
                             sm:w-[56px] sm:h-[56px] /* sm(640px)以上图标尺寸为56px */
                           "
-                        />
+                        /> : <span className="text-2xl font-semibold">SQL</span>}
                       </div>
                       <span className="
-                        text-xs sm:text-sm /* 移动端字体大小xs(12px), sm(640px)以上为sm(14px) */     
+                        text-sm sm:text-base
                         font-medium 
                         text-foreground/70 
                         group-hover:text-foreground/90 
@@ -104,8 +104,20 @@ export default function MySkills() {
               </div>
             </AnimatedText>
           ))}
+          <AnimatedText className="max-w-3xl mx-auto space-y-5 text-center">
+            <h2 className="text-xl sm:text-2xl font-semibold">Research Methods</h2>
+            <p className="text-base sm:text-lg text-foreground/80 leading-relaxed">
+              Experimental design and implementation, difference-in-differences, event studies,
+              matched comparisons, and heterogeneous treatment effects.
+            </p>
+            <p className="text-base sm:text-lg text-foreground/80 leading-relaxed">
+              Structural models of household choice, pricing, and entry; equilibrium computation
+              and GMM; geospatial data integration; LLM-assisted information extraction,
+              evidence provenance, and cross-source validation.
+            </p>
+          </AnimatedText>
         </div>
       </div>
     </section>
   )
-} 
+}
