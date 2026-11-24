@@ -33,9 +33,14 @@ const courses: CourseItem[] = [
     description: "M.A. in Economics"
   },
   {
-    date: "2023.09-Current", 
+    date: "2023.09-2025.09",
     title: "University of California, Santa Cruz ",
-    description: "Ph.D. student in Economics"
+    description: "Doctoral study in Economics; transferred to USC in September 2025"
+  },
+  {
+    date: "2025.09-Present",
+    title: "University of Southern California",
+    description: "PhD student in Economics; expected graduation May 2030"
   }
 ]
 

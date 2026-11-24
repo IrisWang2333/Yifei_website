@@ -14,10 +14,10 @@ export default function About() {
           <AnimatedText>
             <div className="space-y-4">
               <p className="text-lg text-foreground/80 leading-relaxed">
-              I am currently a Ph.D. candidate in Economics with a strong focus on applied microeconomics and education policy. My research primarily explores the causal impacts of educational policies, such as school attendance boundary rezoning and targeted interventions like Education Savings Accounts and voucher programs, on student outcomes, and education and housing markets. 
+              I am a fourth-year Economics PhD student at the University of Southern California, with expected graduation in May 2030. I study how public policies and information interventions shape behavior, access to services, and local markets. My current research focuses on private-school subsidies, school attendance boundaries, and public-service delivery.
               </p>
               <p className="text-lg text-foreground/80 leading-relaxed">
-              Leveraging advanced econometric methods and machine learning techniques, my work aims to contribute to the development of more effective, equitable, and evidence-based policies. With a multidisciplinary background, I have published papers on dynamic optimization algorithms, credit scoring models, and speech recognition. I actively engage in collaborative projects and value the opportunity to contribute to meaningful societal impact through rigorous analysis and innovation.
+              My work combines randomized field experiments, observational causal inference, structural modeling, and multi-source data construction. In a collaboration with the City of San Diego, I build workflows for sampling, treatment assignment, and field implementation. In education research, I develop geographic and LLM-assisted evidence-verification workflows to establish which policy changes occurred and when. My earlier publications cover dynamic programming, credit scoring, and speech recognition.
               </p>
             </div>
           </AnimatedText>
@@ -33,9 +33,9 @@ export default function About() {
 
           <AnimatedText>
             <div className="space-y-4">
-              <h2 className="text-2xl font-semibold">Professional Goal</h2>
+              <h2 className="text-2xl font-semibold">Research Approach</h2>
               <p className="text-lg text-foreground/80 leading-relaxed">
-              My career goal is in academia, where I can combine my passion for research and teaching. I aspire to contribute to the field of education economics by conducting innovative, data-driven research that informs policies promoting educational equity and social mobility. 
+              I connect economic questions to credible empirical designs and practical implementation. This means building and validating data, examining identification assumptions, and communicating what the evidence can support. I am interested in research collaborations where experiments, causal inference, and economic models can inform decisions about policy, services, and user behavior.
               </p>
             </div>
           </AnimatedText>

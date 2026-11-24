@@ -56,7 +56,7 @@ const publications: Publication[] = [
     title: "Combined Spectral and Speech Features for Pig Speech Recognition",
     authors: "Xuan Wu, Silong Zhou, Mingwei Chen, Yihang Zhao, Yifei Wang, Xianmeng Zhao, Danyang Li, Haibo Pu",
     year: "2022",
-    journal: "Plos one",
+    journal: "PLOS ONE",
     type: "publication",
     pdf: "/research/Combined spectral and speech features for pig speech recognition.pdf",
     ssrn: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0276778",
@@ -81,17 +81,17 @@ const publications: Publication[] = [
   },
   {
     id: 5,
-    title: "The Impact of School Attendance Boundary Rezoning on Housing Prices and Students' Academic Performance",
-    authors: "YiFei Wang, David Schönholzer",
+    title: "Boundaries in Motion: Effectiveness and Efficiency of School Redistricting",
+    authors: "Tomás Monarrez, David Schönholzer, Yifei Wang",
     type: "working",
     description: "",
-    overview: "This paper investigates the effects of school attendance boundary (SAB) rezoning on housing prices and Students' Academic Performance. Using geospatial data and machine learning techniques, we adjust and classify boundary changes to identify patterns in housing market responses and demographic shifts. By applying causal inference frameworks, the study evaluates whether SAB adjustments lead to increased economic and racial integration or exacerbate segregation. Preliminary findings suggest that rezoning significantly influences housing prices and community composition, providing critical insights for policymakers to design equitable and effective boundary policies. The research contributes to understanding the interplay between education policies and broader social dynamics.",
+    overview: "This collaborative project studies how school attendance boundary changes affect housing markets, student outcomes, and educational opportunities. My contributions include Python and GIS workflows that standardize boundaries across years, repair geometries, match schools, and measure geographic changes. I also develop LLM-assisted retrieval and structured evidence-extraction workflows using local news, district announcements, and school-board records. The workflow records event status, implementation timing, affected school levels, confidence, and source provenance, with cross-source validation and consistency checks before events enter matched difference-in-differences analyses.",
     publishDate: "",
     chartImage: "/research/2.png",
     bulletPoints: [
-      "Evaluated the causal impact of boundary adjustments on student academic performance and housing prices.",
-      "Utilized GIS and machine learning to analyze school attendance boundary changes.",
-      "This study aims to provide actionable insights for policymakers on how to adjust the school attendance boundary."
+      "Study school redistricting, housing markets, and educational opportunities using geographic data and matched difference-in-differences designs.",
+      "Develop Python and GIS pipelines to compare boundaries and identify candidate changes across years.",
+      "Build LLM-assisted retrieval and structured extraction workflows to verify implementation timing, affected schools, and evidence provenance."
     ]
   },
   {
@@ -110,16 +110,29 @@ const publications: Publication[] = [
   },
   {
     id: 7,
-    title: "Impact of Education Savings Accounts (ESA) on Students' Academic Performance and School Choice",
-    authors: "YiFei Wang",
+    title: "Private-School Subsidies and Local Market Expansion",
+    authors: "Yifei Wang",
     type: "working",
     description: "",
-    overview: "This study examines the impact of Education Savings Accounts (ESAs) on K-12 education, focusing on their effects on student achievement and school choice. ESAs are publicly funded, government-authorized savings accounts that parents can use for various educational expenses, including tuition, tutoring, online education programs, special education therapies, textbooks, and, in some cases, college savings. Currently, there are 19 ESA programs across 17 states in the U.S., with variations in eligibility criteria and implementation.",
+    overview: "My independent research examines how voucher and Education Savings Account subsidies affect private-school supply, enrollment, staffing, and local education markets. I link repeated Private School Universe Survey waves, public-school enrollment records, geography, and verified policy histories, and analyze policy changes using staggered difference-in-differences, event studies, and matched comparisons. I am also developing a structural model of heterogeneous household school choice, tuition setting, and endogenous entry, including subsidy-induced pricing kinks. The Python implementation includes equilibrium solvers and GMM routines validated through synthetic-data parameter-recovery exercises. Empirical estimation requires continued verification of historical tuition, choice sets, and instrument inputs.",
     publishDate: "",
     bulletPoints: [
-      "Education Savings Accounts (ESAs) provide publicly funded, flexible spending options for K-12 education, allowing families to cover tuition, tutoring, online programs, and other educational expenses.",
-      "This research examines the impact of ESAs on student achievement and school choice, focusing on policy differences across states such as Arizona, North Carolina, Florida, Utah, and Tennessee.",
-      "Using a Difference-in-Differences (DID) approach with matching techniques, the study aims to provide empirical insights for policymakers to assess ESA effectiveness and optimize program design."
+      "Integrate school surveys, enrollment records, and policy histories to study school supply and enrollment responses to subsidies.",
+      "Combine difference-in-differences and event studies with a structural model of household choice, school pricing, and endogenous entry.",
+      "Implement equilibrium solvers and GMM routines in Python, validate them using simulated data, and audit inputs for empirical estimation."
+    ]
+  },
+  {
+    id: 8,
+    title: "San Diego Get It Done Field Experiment",
+    authors: "David Schönholzer, Benjamin Vatter, Yifei Wang",
+    type: "working",
+    description: "Research collaboration with CaminoLabs and the City of San Diego.",
+    overview: "This field study combines a randomized information intervention, door-to-door surveys, and administrative service-request data to study resident engagement with San Diego's Get It Done system. I built Python and geospatial workflows for weekly sampling, randomized full, partial, and control outreach assignments, field preparation, and follow-up surveys. The workflow tracks prior sampling, checks route connectivity, and adapts task assignments to field constraints. I also analyze treatment intensity and heterogeneous responses and coauthored the pre-analysis plan and briefing materials for the City's Transportation Department. Team briefing materials report 5,010 door hangers and 1,866 interviews from the 2026 field study.",
+    bulletPoints: [
+      "Implement reproducible sampling, randomized treatment allocation, and recurring field preparation in Python.",
+      "Evaluate behavioral responses using experimental assignments, survey data, and administrative service records.",
+      "Coauthor the pre-analysis plan and City briefing materials; the team field study recorded 5,010 door hangers and 1,866 interviews."
     ]
   },
 ]
@@ -148,16 +161,19 @@ export default function Research() {
         </AnimatedText>
 
         <div className="space-y-16">
-          {['publication', 'working'].map((type) => (
+          {['working', 'publication'].map((type) => (
             <div key={type} className="space-y-8">
               <AnimatedText>
                 <h2 className="text-xl sm:text-2xl font-semibold">
-                  {type === 'working' ? 'Working Papers' : 'Publications'}
+                  {type === 'working' ? 'Current Research' : 'Publications'}
                 </h2>
               </AnimatedText>
 
               {publications
                 .filter(paper => paper.type === type)
+                .sort((a, b) => type === 'working'
+                  ? [7, 8, 5, 6].indexOf(a.id) - [7, 8, 5, 6].indexOf(b.id)
+                  : 0)
                 .map((paper) => (
                   <AnimatedText key={paper.id}>
                     <div className="
@@ -281,4 +297,4 @@ export default function Research() {
       )}
     </section>
   )
-} 
+}

@@ -7,7 +7,8 @@ type Course = {
   code: string
   name: string
   level?: string
-  professor: string
+  professor?: string
+  institution: string
   term: string
   reviews?: string[]
 }
@@ -15,17 +16,26 @@ type Course = {
 // 示例课程数据
 const courses: Course[] = [
   {
+    id: 5,
+    code: "ECON 318",
+    name: "Econometrics Labs",
+    institution: "University of Southern California",
+    term: "Fall 2026",
+  },
+  {
     id: 1,
     code: "ECON 124",
     name: "Machine Learning for Economists",
     professor: "Michael Pak-shing Leung",
-    term: "2025.01-Current"
+    institution: "University of California, Santa Cruz",
+    term: "2025"
   },
   {
     id: 2,
     code: "ECON 1", 
     name: "Introductory Microeconomics ",
     professor: "Subhra Baran Saha",
+    institution: "University of California, Santa Cruz",
     term: "2024.09-2024.12",
     reviews: [
       "She helped me encourage that I could succeed in the course by trying to put the answer and concept into simpler terms.",
@@ -39,6 +49,7 @@ const courses: Course[] = [
     code: "ECON 1", 
     name: "Introductory Microeconomics ",
     professor: "Kwok-Chiu Fung",
+    institution: "University of California, Santa Cruz",
     term: "2024.04-2024.06",
     reviews: [
       "She often giving all his student insightful teaching materiale letting me catch on the class and prepared for the exam",
@@ -50,6 +61,7 @@ const courses: Course[] = [
     code: "ECON 1", 
     name: "Introductory Microeconomics ",
     professor: "Kwok-Chiu Fung",
+    institution: "University of California, Santa Cruz",
     term: "2024.01-2024.03",
     reviews: [
       "The TA's responsiveness over email with issues I was having with the coursework was extremely helpful.",
@@ -72,7 +84,7 @@ export default function TeachingExperience() {
               Teaching Experience
             </h1>
             <span className="text-lg sm:text-xl text-gray-600 dark:text-gray-400">
-              @ University of California, Santa Cruz
+              University of Southern California and UC Santa Cruz
             </span>
           </div>
         </AnimatedText>
@@ -92,8 +104,9 @@ export default function TeachingExperience() {
 
                 <div className="space-y-1">
                   <p className="text-base sm:text-lg">
-                  Teaching Assistant - {course.professor}
+                  Teaching Assistant{course.professor ? ` — ${course.professor}` : ''}
                   </p>
+                  <p className="text-base text-gray-600 dark:text-gray-400">{course.institution}</p>
                   <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
                     {course.term}
                   </p>
@@ -126,4 +139,4 @@ export default function TeachingExperience() {
       </div>
     </section>
   )
-} 
+}

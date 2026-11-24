@@ -15,8 +15,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Yifei Wang - PhD Student in Economics | USC | Applied Micro & Education Policy",
-  description: "Welcome to the official website of Yifei Wang, PhD student in Economics at University of Southern California. Research interests include education policy, applied microeconomics, and public policy.",
+  title: "Yifei Wang | Economics PhD at USC | Causal Inference and Education Markets",
+  description: "Yifei Wang is an Economics PhD student at USC working on applied microeconomics, causal inference, field experiments, structural modeling, and education markets. Expected graduation May 2030.",
 };
 
 export default function RootLayout({
