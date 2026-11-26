@@ -16,7 +16,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Yifei Wang | Economics PhD at USC | Causal Inference and Education Markets",
-  description: "Yifei Wang is an Economics PhD student at USC working on applied microeconomics, causal inference, field experiments, structural modeling, and education markets. Expected graduation May 2030.",
+  description: "Yifei Wang is an Economics PhD student at USC working on applied microeconomics, causal inference, field experiments, structural modeling, and education markets. Expected graduation May 2028.",
 };
 
 export default function RootLayout({

@@ -40,7 +40,7 @@ const courses: CourseItem[] = [
   {
     date: "2025.09-Present",
     title: "University of Southern California",
-    description: "PhD student in Economics; expected graduation May 2030"
+    description: "PhD student in Economics; expected graduation May 2028"
   }
 ]
 

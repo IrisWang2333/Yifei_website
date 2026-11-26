@@ -14,7 +14,7 @@ export default function About() {
           <AnimatedText>
             <div className="space-y-4">
               <p className="text-lg text-foreground/80 leading-relaxed">
-              I am a fourth-year Economics PhD student at the University of Southern California, with expected graduation in May 2030. I study how public policies and information interventions shape behavior, access to services, and local markets. My current research focuses on private-school subsidies, school attendance boundaries, and public-service delivery.
+              I am a fourth-year Economics PhD student at the University of Southern California, with expected graduation in May 2028. I study how public policies and information interventions shape behavior, access to services, and local markets. My current research focuses on private-school subsidies, school attendance boundaries, and public-service delivery.
               </p>
               <p className="text-lg text-foreground/80 leading-relaxed">
               My work combines randomized field experiments, observational causal inference, structural modeling, and multi-source data construction. In a collaboration with the City of San Diego, I build workflows for sampling, treatment assignment, and field implementation. In education research, I develop geographic and LLM-assisted evidence-verification workflows to establish which policy changes occurred and when. My earlier publications cover dynamic programming, credit scoring, and speech recognition.
