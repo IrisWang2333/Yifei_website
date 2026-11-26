@@ -33,7 +33,7 @@ export default function Hero() {
           <p className="mt-2 text-foreground/80 leading-relaxed">
             Applied Microeconomics · Causal Inference · Structural Modeling
           </p>
-          <p className="mt-2 text-sm text-foreground/70">Expected graduation: May 2030</p>
+          <p className="mt-2 text-sm text-foreground/70">Expected graduation: May 2028</p>
         </AnimatedText>
 
         <AnimatedText 
